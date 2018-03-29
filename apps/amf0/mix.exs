@@ -9,7 +9,7 @@ defmodule Amf0.Mixfile do
       config_path: "../../config/config.exs",
       deps_path: "../../deps",
       lockfile: "../../mix.lock",
-      elixir: "~> 1.2",
+      elixir: "~> 1.6",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       description: description(),
@@ -23,7 +23,7 @@ defmodule Amf0.Mixfile do
   end
 
   defp deps do
-    [{:ex_doc, "~> 0.14", only: :dev}]
+    [{:ex_doc, "~> 0.18", only: :dev}]
   end
 
   defp package do

@@ -9,7 +9,7 @@ defmodule GenRtmpClient.Mixfile do
       config_path: "../../config/config.exs",
       deps_path: "../../deps",
       lockfile: "../../mix.lock",
-      elixir: "~> 1.4",
+      elixir: "~> 1.6",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       package: package(),
@@ -26,20 +26,14 @@ defmodule GenRtmpClient.Mixfile do
 
   defp deps do
     [
-      {:ex_doc, "~> 0.14", only: [:dev, :publish, :umbrella]} |
+      {:ex_doc, "~> 0.18", only: [:dev, :publish, :umbrella]} |
       get_umbrella_dependencies(Mix.env)
-    ]
-  end
-
-  defp get_umbrella_dependencies(:umbrella) do
-    [
-      {:rtmp, in_umbrella: true},
     ]
   end
 
   defp get_umbrella_dependencies(_) do
     [
-      {:rtmp, "~> 0.2.0", hex: :eml_rtmp},
+      {:rtmp, in_umbrella: true},
     ]
   end
 

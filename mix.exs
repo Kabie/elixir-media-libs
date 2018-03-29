@@ -11,6 +11,6 @@ defmodule ElixirMediaLibs.Mixfile do
   end
 
   defp deps do
-    [{:dialyxir, "~> 0.4.3", only: [:dev, :umbrella]}]
+    [{:dialyxir, "~> 0.5", only: [:dev, :umbrella]}]
   end
 end

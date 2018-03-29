@@ -9,7 +9,7 @@ defmodule GenRtmpServer.Mixfile do
       config_path: "../../config/config.exs",
       deps_path: "../../deps",
       lockfile: "../../mix.lock",
-      elixir: "~> 1.4",
+      elixir: "~> 1.6",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       description: description(),
@@ -27,7 +27,7 @@ defmodule GenRtmpServer.Mixfile do
     [
       get_ranch_dependency(Mix.env),
       {:uuid, "~> 1.1"},
-      {:ex_doc, "~> 0.14", only: [:dev, :publish, :umbrella]}
+      {:ex_doc, "~> 0.18", only: [:dev, :publish, :umbrella]}
     ]
   end
 
@@ -39,12 +39,12 @@ defmodule GenRtmpServer.Mixfile do
 
   defp get_umbrella_dependencies(_) do
     [
-      {:rtmp, "~> 0.2.0", hex: :eml_rtmp},
+      {:rtmp, "~> 0.2.0", in_umbrella: true},
     ]
   end
 
-  defp get_ranch_dependency(:publish), do: {:ranch, "~> 1.2.1"}
-  defp get_ranch_dependency(_), do: {:ranch, "~> 1.2.1", manager: :rebar}
+  defp get_ranch_dependency(:publish), do: {:ranch, "~> 1.4"}
+  defp get_ranch_dependency(_), do: {:ranch, "~> 1.4", manager: :rebar}
 
   defp package do
     [

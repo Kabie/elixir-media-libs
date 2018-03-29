@@ -9,7 +9,7 @@ defmodule Rtmp.Mixfile do
       config_path: "../../config/config.exs",
       deps_path: "../../deps",
       lockfile: "../../mix.lock",
-      elixir: "~> 1.3",
+      elixir: "~> 1.6",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       deps: deps(),
@@ -28,8 +28,7 @@ defmodule Rtmp.Mixfile do
     ]
   end
 
-  defp environment_specific_deps(:umbrella), do: [{:amf0, in_umbrella: true}]
-  defp environment_specific_deps(_), do: [{:amf0, "~> 1.0.1", hex: :eml_amf0}]
+  defp environment_specific_deps(_), do: [{:amf0, in_umbrella: true}]
 
   defp package do
     [
